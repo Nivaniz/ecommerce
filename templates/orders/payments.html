@@ -105,18 +105,8 @@
                     <img src="{% static './images/misc/payments.png' %}" height="26">
                 </p>
 
-                <div id="paypal-button-container">
-
-                </div>
-                  <div class="text-center">
-                		<a href="{% url 'order_complete' %}" class="btn btn-success">Pagar</a>
-                	</div>
-                  <br>
-                  <div class="text-center">
-                		<a href="{% url 'store' %}" class="btn btn-success">Seguir comprando</a>
-                	</div>
-
-
+                <div id="paypal-button-container"></div>
+        
             </div> <!-- card-body.// -->
             </div> <!-- card.// -->
 
@@ -128,9 +118,6 @@
     </div> <!-- container .//  -->
     </section>
       <script>
-
-        /* Estas lineas son para funcionar el método de cobro (se activa solo cuando es verdadero)
-
 
         function getCookie(name){
           let cookieValue = null;
@@ -196,7 +183,7 @@
                 });
             }
         }).render('#paypal-button-container');
-        */
+       
     </script>
     <!-- ========================= SECTION CONTENT END// ========================= -->
 {% endblock %}
