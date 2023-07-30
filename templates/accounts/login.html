@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y" style="min-height:84vh">
+
+
+
+    {% if request.GET.command == 'verification' %}
+      <div class="container mx_auto alert alert-info" role="alert" style="max-width=380px; margin-top=100px;">
+        Gracias por registrarte en ByteShop, te hemos enviado un email para confirmar tu cuenta a [{{ request.GET.email }}]
+        <br>
+        <br>
+        Si ya verificaste tu cuenta puedes iniciar sesión: <a href="{% url 'login' %}">Entrar a mi cuenta</a>
+      </div>
+
+    {% else %}
+    <!-- ============================ COMPONENT LOGIN   ================================= -->
+        <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+          {% include 'includes/alerts.html' %}
+          <div class="card-body">
+          <h4 class="card-title mb-4">Inicio de sesión</h4>
+          <form action="{% url 'login' %}" method="POST">
+              {% csrf_token %}
+
+              <div class="form-group">
+                 <input type="email" class="form-control" placeholder="Email" name="email" >
+              </div> <!-- form-group// -->
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+              </div> <!-- form-group// -->
+
+              <div class="form-group">
+                  <a href="{% url 'forgotPassword' %}" class="float-right">¿Olvidaste tu contraseña?</a>
+
+              </div> <!-- form-group form-check .// -->
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block"> Entrar  </button>
+              </div> <!-- form-group// -->
+          </form>
+          </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+
+         <p class="text-center mt-4">¿No tienes una cuenta? <a href="{% url 'register' %}">Registrate</a></p>
+         <br><br>
+    <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+    {% endif %}
+
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+{% endblock %}

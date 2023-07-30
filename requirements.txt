@@ -1,0 +1,15 @@
+asgiref==3.4.1
+certifi==2023.5.7
+Django==3.2.20
+django-admin-honeypot==1.1.0
+django-session-timeout==0.1.0
+django-admin-thumbnails==0.2.8
+idna==3.4
+Pillow==8.4.0
+python-decouple==3.8
+requests==2.27.1
+six==1.16.0
+sqlparse==0.4.4
+tzdata==2023.3
+urllib3==1.26.16
+django-ckeditor==6.2.0

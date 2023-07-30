@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+Hola {{ user.first_name }} !,
+Gracias por unirte a ByteShop. Estás a un paso de disfrutar de los mejores productos tecnológicos.
+
+Para activar su cuenta, haga clic en el siguiente enlace dentro de los siguientes 30 minutos:
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+O simplemente copie y pegue el enlace completo directamente en la barra de direcciones de su navegador.
+
+Para obtener ayuda adicional, visite nuestro Centro de soporte.
+Si no realizó esta acción, ignore este correo electrónico. Si el código de activación ha caducado, simplemente envíe una nueva solicitud.
+
+{% endautoescape %}
